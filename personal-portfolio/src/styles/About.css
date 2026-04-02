@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=Lora:wght@400;500&display=swap");
+
+/* ── Section wrapper ─────────────────────────────────────── */
+.about-section {
+  min-height: 100vh;
+  background-color: #f2efe8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px 100px;
+  box-sizing: border-box;
+}
+
+/* ── "ABOUT ME" label ────────────────────────────────────── */
+.about-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Lora", serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #b89a5a;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.label-line {
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background-color: #b89a5a;
+}
+
+/* ── Main heading ────────────────────────────────────────── */
+.about-heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: #1a1a1a;
+  text-align: center;
+  line-height: 1.15;
+  margin: 0 0 48px;
+}
+
+.about-heading-italic {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #b89a5a;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.about-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 44px 52px;
+  max-width: 780px;
+  width: 100%;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+  animation: cardFadeUp 0.7s ease both;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Typography inside card ──────────────────────────────── */
+.about-role {
+  font-family: "Lora", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.about-sub {
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #555;
+  margin: 0 0 28px;
+}
+
+.about-body {
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 22px;
+}
+
+.about-body strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ── Closing lines ───────────────────────────────────────── */
+.about-closing {
+  margin-top: 8px;
+}
+
+.about-closing p {
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #333;
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .about-card {
+    padding: 32px 24px;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+  }
+}

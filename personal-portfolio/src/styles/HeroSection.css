@@ -54,8 +54,13 @@ body {
   letter-spacing: 0.3px;
   transition: color 0.2s;
 }
-
-.nav-links a:hover { color: var(--dark); }
+.nav-links a,
+.nav-logo,
+.nav-cta,
+button {
+  cursor: pointer;
+}
+.nav-links a:hover { color: var(--gold); }
 
 .nav-cta {
   background: var(--dark);
