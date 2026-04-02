@@ -59,7 +59,7 @@ export default function HeroSection() {
             <a href="#" className="btn-primary">
               Resume <span className="arrow">↗</span>
             </a>
-            <a href="#" className="btn-secondary">Contact Me</a>
+            <a href="#contact" className="btn-secondary">Contact Me</a>
           </div>
 
           <div className="stats">
