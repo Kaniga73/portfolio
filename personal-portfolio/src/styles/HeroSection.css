@@ -96,7 +96,7 @@ button {
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 5vw, 64px);
+font-size: clamp(32px, 5vw, 48px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -2px;

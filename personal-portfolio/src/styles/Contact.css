@@ -45,7 +45,7 @@
 
 .contact-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 700;
   color: var(--dark, #1a1a18);
   letter-spacing: -2px;
@@ -229,7 +229,7 @@
   }
 
   .contact-title {
-    font-size: 40px;
+    font-size: 22px;
   }
 
   .contact-social-btn {

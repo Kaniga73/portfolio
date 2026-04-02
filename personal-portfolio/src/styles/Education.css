@@ -20,7 +20,7 @@
 
 .edu-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 700;
   color: #1a1a18;
   letter-spacing: -1.5px;
@@ -158,5 +158,11 @@
 
   .edu-degree {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .edu-title {
+    font-size: 22px;
   }
 }

@@ -40,7 +40,7 @@
 
 .proj-title-main {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 700;
   color: var(--dark, #1a1a18);
   letter-spacing: -1.5px;
@@ -224,5 +224,10 @@
 
   .proj-emoji {
     font-size: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .proj-title-main {
+    font-size: 22px;
   }
 }
