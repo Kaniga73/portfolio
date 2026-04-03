@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "../styles/HeroSection.css";
 import { Link } from "react-scroll";
+import resume from "../assets/resume.pdf";
 
 export default function HeroSection() {
   const [count, setCount] = useState({ years: 0, projects: 0, clients: 0 });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const targets = { years: 2, projects: 2, clients: 2 };
@@ -29,13 +31,16 @@ export default function HeroSection() {
     
 <nav className="navbar">
   <div className="nav-logo">Kaniga R</div>
-  <ul className="nav-links">
-    <li><Link to="home" smooth={true} duration={700}>Home</Link></li>
-    <li><Link to="about" smooth={true} duration={700}>About</Link></li>
-    <li><Link to="education" smooth={true} duration={700}>Education</Link></li>
-    <li><Link to="skills" smooth={true} duration={700}>Skills</Link></li>
-    <li><Link to="projects" smooth={true} duration={700}>Projects</Link></li>
-    <li><Link to="contact" smooth={true} duration={700}>Contact</Link></li>
+   <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+    ☰
+  </div>
+  <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+    <li><Link to="home" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Home</Link></li>
+    <li><Link to="about" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>About</Link></li>
+    <li><Link to="education" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Education</Link></li>
+    <li><Link to="skills" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Skills</Link></li>
+    <li><Link to="projects" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Projects</Link></li>
+    <li><Link to="contact" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Contact</Link></li>
     <li><Link to="contact" smooth={true} duration={700} className="nav-cta">Hire Me</Link></li>
   </ul>
 </nav>
@@ -56,9 +61,14 @@ export default function HeroSection() {
            focusing on thoughtful design and seamless interactions.          </p>
 
           <div className="hero-btns">
-            <a href="#" className="btn-primary">
-              Resume <span className="arrow">↗</span>
-            </a>
+            <a 
+            href={resume} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-primary"
+          >
+            Resume <span className="arrow">↗</span>
+          </a>
             <a href="#contact" className="btn-secondary">Contact Me</a>
           </div>
 
