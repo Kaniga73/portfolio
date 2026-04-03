@@ -35,13 +35,12 @@ export default function HeroSection() {
     {menuOpen ? "✕" : "☰"}
   </div>
   <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-    <li><Link to="home" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Home</Link></li>
-    <li><Link to="about" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>About</Link></li>
-    <li><Link to="education" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Education</Link></li>
-    <li><Link to="skills" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Skills</Link></li>
-    <li><Link to="projects" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Projects</Link></li>
-    <li><Link to="contact" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Contact</Link></li>
-    
+   <li><Link to="home" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Home</Link></li>
+<li><Link to="about" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>About</Link></li>
+<li><Link to="education" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Education</Link></li>
+<li><Link to="skills" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-100}>Skills</Link></li><li><Link to="projects" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Projects</Link></li>
+<li><Link to="contact" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Contact</Link></li>
+
   </ul>
 </nav>
       <section className="hero" id="home">

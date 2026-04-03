@@ -15,7 +15,7 @@ const projectsData = [
    
     title: "Personal Portfolio",
     desc: "A responsive, interactive portfolio built with React and CSS to highlight my projects, skills, and frontend expertise.",
-    tags: ["React", "Css"],
+    tags: ["React", "CSS3"],
     live: "#",
     github: "#",
   },

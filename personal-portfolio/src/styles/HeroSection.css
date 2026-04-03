@@ -7,8 +7,9 @@
   --off-white: #faf8f4;
   --warm-tan: #e8dfc8;
   --gold: #c9a84c;
+  --terracotta: #c4704f; 
   --dark: #1a1a18;
-  --muted: #6b6b68;
+  --muted: #5a5a57; 
   --border: #d4cfc5;
 }
 
@@ -42,29 +43,50 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 20px; /* reduced from 40px */
   list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--muted);
+  color:  #4a4a47;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
   transition: color 0.2s;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Underline effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
 }
 .nav-links a,
 .nav-logo,
-.nav-cta,
+
 button {
   cursor: pointer;
 }
 .nav-links a:hover { color: var(--gold); }
 
 
-
-.nav-cta:hover { background: #333 !important; color: #fff !important; }
 
 /* ─── Hero ─── */
 .hero {
@@ -92,7 +114,7 @@ button {
 font-size: clamp(32px, 5vw, 48px);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 28px;
   color: var(--dark);
 }
@@ -120,7 +142,7 @@ font-size: clamp(32px, 5vw, 48px);
   font-size: 17px;
   line-height: 1.75;
   color: var(--muted);
-  font-weight: 300;
+  font-weight: 400;
   max-width: 440px;
   margin-bottom: 44px;
 }
@@ -157,6 +179,7 @@ font-size: clamp(32px, 5vw, 48px);
 
 .btn-primary .arrow {
   font-size: 16px;
+  color: var(--gold);
   transition: transform 0.2s;
 }
 
@@ -200,8 +223,9 @@ font-size: clamp(32px, 5vw, 48px);
 
 .stat-number sup {
   font-size: 18px;
-  color: var(--gold);
+  
   font-weight: 700;
+  color: var(--terracotta);
 }
 
 .stat-label {
@@ -444,3 +468,10 @@ font-size: clamp(32px, 5vw, 48px);
     padding: 12px 20px;
     font-size: 15px;
   }
+  .nav-links a.active-link {
+  color: var(--gold);
+}
+
+.nav-links a.active-link::after {
+  width: 100%;
+}
