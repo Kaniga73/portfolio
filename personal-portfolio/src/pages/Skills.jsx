@@ -15,7 +15,7 @@ const skillsData = [
   {
     icon: "✦",
     category: "Tools & Platforms",
-    skills: ["VS Code", "GitHub", "Figma", "npm", "Vite", "Vercel", "REST APIs"],
+    skills: ["VS Code", "GitHub", "Figma", "npm", "Vite", "Vercel"],
   },
 ];
 

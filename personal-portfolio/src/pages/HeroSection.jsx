@@ -31,8 +31,8 @@ export default function HeroSection() {
     
 <nav className="navbar">
   <div className="nav-logo">Kaniga R</div>
-   <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-    ☰
+  <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+    {menuOpen ? "✕" : "☰"}
   </div>
   <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
     <li><Link to="home" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Home</Link></li>
@@ -41,10 +41,9 @@ export default function HeroSection() {
     <li><Link to="skills" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Skills</Link></li>
     <li><Link to="projects" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Projects</Link></li>
     <li><Link to="contact" smooth={true} duration={700} onClick={() => setMenuOpen(false)}>Contact</Link></li>
-    <li><Link to="contact" smooth={true} duration={700} className="nav-cta">Hire Me</Link></li>
+    
   </ul>
 </nav>
-
       <section className="hero" id="home">
         <div className="hero-left">
           
