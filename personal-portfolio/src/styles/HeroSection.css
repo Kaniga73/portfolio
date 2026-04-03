@@ -475,3 +475,11 @@ font-size: clamp(32px, 5vw, 48px);
 .nav-links a.active-link::after {
   width: 100%;
 }
+/* ─── Active link ─── */
+.nav-links a.active-link {
+  color: var(--gold);
+}
+
+.nav-links a.active-link::after {
+  width: 100%;
+}

@@ -8,16 +8,16 @@ const projectsData = [
     title: "Ideate",
     desc: "Role-based web app with idea submission, status tracking, and feedback, built using LocalStorage and reusable components.",
     tags: ["React", "LocalStorage"],
-    live: "#",
-    github: "#",
+    live: "https://ideate-two.vercel.app/",
+    github: "https://github.com/Kaniga73/ideate.git",
   },
   {
    
     title: "Personal Portfolio",
     desc: "A responsive, interactive portfolio built with React and CSS to highlight my projects, skills, and frontend expertise.",
     tags: ["React", "CSS3"],
-    live: "#",
-    github: "#",
+    live: "Kanigadev.vercel.app",
+    github: "https://github.com/Kaniga73/portfolio.git",
   },
 ];
 

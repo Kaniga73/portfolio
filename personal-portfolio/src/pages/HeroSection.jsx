@@ -35,12 +35,12 @@ export default function HeroSection() {
     {menuOpen ? "✕" : "☰"}
   </div>
   <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-   <li><Link to="home" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Home</Link></li>
-<li><Link to="about" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>About</Link></li>
-<li><Link to="education" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Education</Link></li>
-<li><Link to="skills" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-100}>Skills</Link></li><li><Link to="projects" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Projects</Link></li>
-<li><Link to="contact" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80}>Contact</Link></li>
-
+    <li><Link to="home" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Home</Link></li>
+    <li><Link to="about" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>About</Link></li>
+    <li><Link to="education" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Education</Link></li>
+    <li><Link to="skills" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-100} onClick={() => setMenuOpen(false)}>Skills</Link></li>
+    <li><Link to="projects" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Projects</Link></li>
+    <li><Link to="contact" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Contact</Link></li>
   </ul>
 </nav>
       <section className="hero" id="home">
@@ -93,15 +93,8 @@ export default function HeroSection() {
 
     {/* Circle Frame */}
     <div className="circle-frame">
-      <img src="/your-photo.jpg" alt="Profile" className="profile-img" />
-      <div className="photo-placeholder">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="1.2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span>Your Photo</span>
-      </div>
-      <div className="emoji-wrap">🧑‍💻</div>
+      <img src="/photo.jpg" alt="Profile" className="profile-img" />
+      
     </div>
 
     {/* ✅ Pill moved outside the circle */}
