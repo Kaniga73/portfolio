@@ -6,7 +6,7 @@
   --cream: #f5f0e8;
   --off-white: #faf8f4;
   --warm-tan: #e8dfc8;
-  --gold: #c9a84c;
+  --gold: #cda73e;
   --terracotta: #c4704f; 
   --dark: #1a1a18;
   --muted: #5a5a57; 
@@ -43,13 +43,13 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 20px; /* reduced from 40px */
+  gap: 20px;
   list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color:  #4a4a47;
+  color: #4a4a47;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -58,7 +58,6 @@ body {
   padding-bottom: 4px;
 }
 
-/* Underline effect */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -71,22 +70,16 @@ body {
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.nav-links a:hover {
-  color: var(--gold);
-}
-.nav-links a,
-.nav-logo,
-
-button {
-  cursor: pointer;
-}
+.nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { color: var(--gold); }
 
+.nav-links a,
+.nav-logo,
+button { cursor: pointer; }
 
+/* ─── Active link ─── */
+.nav-links a.active-link { color: var(--gold); }
+.nav-links a.active-link::after { width: 100%; }
 
 /* ─── Hero ─── */
 .hero {
@@ -109,35 +102,48 @@ button {
   animation: fadeUp 0.8s ease forwards;
 }
 
+/* ─── Typing Title ─── */
 .hero-title {
   font-family: 'Playfair Display', serif;
-font-size: clamp(32px, 5vw, 48px);
-  font-weight: 400;
-  line-height: 1.05;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.2;
   letter-spacing: -1px;
   margin-bottom: 28px;
   color: var(--dark);
+
+  /* layout for inline spans */
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  min-height: 1.3em;
 }
 
-.hero-title em {
+.typed-plain {
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.typed-highlight {
+  color: var(--gold);
   font-style: italic;
   font-weight: 500;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 300;
   color: var(--gold);
-  position: relative;
+  animation: blink 0.75s step-end infinite;
+  font-style: normal;
 }
 
-.hero-title em::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0.4;
-  border-radius: 2px;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
+/* ─── Hero Desc ─── */
 .hero-desc {
   font-size: 17px;
   line-height: 1.75;
@@ -147,6 +153,7 @@ font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 44px;
 }
 
+/* ─── Buttons ─── */
 .hero-btns {
   display: flex;
   gap: 16px;
@@ -223,7 +230,6 @@ font-size: clamp(32px, 5vw, 48px);
 
 .stat-number sup {
   font-size: 18px;
-  
   font-weight: 700;
   color: var(--terracotta);
 }
@@ -282,7 +288,6 @@ font-size: clamp(32px, 5vw, 48px);
   inset: 0;
 }
 
-/* Hide placeholder when real image is present */
 .circle-frame:has(.profile-img[src]:not([src=""])) .photo-placeholder {
   display: none;
 }
@@ -300,20 +305,7 @@ font-size: clamp(32px, 5vw, 48px);
   z-index: 1;
 }
 
-/* ─── Emoji (inside circle, centered-bottom area) ─── */
-.emoji-wrap {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 80px;
-  line-height: 1;
-  z-index: 2;
-  animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.10));
-}
-
-
+/* ─── Pill ─── */
 .pill {
   position: absolute;
   top: 40px;
@@ -330,6 +322,7 @@ font-size: clamp(32px, 5vw, 48px);
   gap: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.07);
   z-index: 3;
+  animation: pillFloat 5s ease-in-out 1s infinite;
 }
 
 .pill-dot {
@@ -340,7 +333,7 @@ font-size: clamp(32px, 5vw, 48px);
   flex-shrink: 0;
 }
 
-/* ─── Badge (outside circle, bottom-right) ─── */
+/* ─── Badge ─── */
 .badge {
   position: absolute;
   bottom: 50px;
@@ -369,8 +362,6 @@ font-size: clamp(32px, 5vw, 48px);
   50%       { transform: translateY(-10px); }
 }
 
-/* float for pill (has translateX too, so separate) */
-.pill { animation: pillFloat 5s ease-in-out 1s infinite; }
 @keyframes pillFloat {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-6px); }
@@ -384,25 +375,23 @@ font-size: clamp(32px, 5vw, 48px);
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ─── Responsive ─── */
-
+/* ─── Hamburger ─── */
 .hamburger {
   font-size: 26px;
   cursor: pointer;
   display: none;
+  position: relative;
+  z-index: 1000;
 }
 
+/* ─── Responsive ─── */
 @media (max-width: 900px) {
   .navbar {
     padding: 20px 24px;
     position: relative !important;
   }
 
-  .hamburger {
-    display: block;
-    position: relative;
-    z-index: 1000;
-  }
+  .hamburger { display: block; }
 
   .nav-links {
     display: none !important;
@@ -423,9 +412,7 @@ font-size: clamp(32px, 5vw, 48px);
     list-style: none;
   }
 
-  .nav-links.active {
-    display: flex !important;
-  }
+  .nav-links.active { display: flex !important; }
 
   .nav-links li a {
     display: block;
@@ -437,49 +424,32 @@ font-size: clamp(32px, 5vw, 48px);
     text-decoration: none;
   }
 
- .nav-links li a:hover {
-  background: var(--warm-tan);
-  color: var(--dark);
-}
-
-  
+  .nav-links li a:hover {
+    background: var(--warm-tan);
+    color: var(--dark);
+  }
 
   .hero {
     flex-direction: column;
     padding: 48px 24px 40px;
     gap: 48px;
   }
+
   .hero-right { flex: none; width: 100%; order: -1; }
   .blob-wrap { width: 300px; height: 340px; }
   .circle-frame { width: 260px; height: 260px; }
-  .emoji-wrap { font-size: 60px; bottom: 50px; }
   .hero-left { max-width: 100%; }
   .stats { gap: 32px; }
-  .badge { display: none; }
-}
 
-
-
-  .hamburger {
-    position: relative;
-    z-index: 1000;
+  .badge {
+    right: 50%;
+    bottom: 20px;
+    transform: translateX(50%);
+    font-size: 11px;
+    padding: 10px 14px;
   }
-  .nav-links li a {
-    padding: 12px 20px;
-    font-size: 15px;
-  }
-  .nav-links a.active-link {
-  color: var(--gold);
 }
-
-.nav-links a.active-link::after {
-  width: 100%;
-}
-/* ─── Active link ─── */
-.nav-links a.active-link {
-  color: var(--gold);
-}
-
-.nav-links a.active-link::after {
-  width: 100%;
+.typed-plain,
+.typed-highlight {
+  white-space: pre;
 }

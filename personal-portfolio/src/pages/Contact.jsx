@@ -49,15 +49,33 @@ export default function Contact() {
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    setTimeout(() => {
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("sending");
+
+  try {
+    const res = await fetch("https://formspree.io/f/mvzvvpqk", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 3000);
-    }, 1200);
-  };
+    } else {
+      alert("Something went wrong. Try again.");
+      setStatus("idle");
+    }
+  } catch (error) {
+    alert("Error sending message.");
+    setStatus("idle");
+  }
+};
 
   useEffect(() => {
     const makeObserver = (setter) =>
