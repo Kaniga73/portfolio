@@ -441,15 +441,22 @@ button { cursor: pointer; }
   .hero-left { max-width: 100%; }
   .stats { gap: 32px; }
 
-  .badge {
-    right: 50%;
+ .badge {
+    right: 10px;
+    left: auto;
     bottom: 20px;
-    transform: translateX(50%);
-    font-size: 11px;
-    padding: 10px 14px;
+    transform: none;
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
+  .badge-num {
+    font-size: 13px;
   }
 }
+
 .typed-plain,
 .typed-highlight {
   white-space: pre;
 }
+

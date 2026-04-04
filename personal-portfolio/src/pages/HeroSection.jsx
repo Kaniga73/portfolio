@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/HeroSection.css";
 import { Link } from "react-scroll";
 import resume from "../assets/resume.pdf";
+import profilePic from "../assets/photo.png";
 
 const TYPING_LINES = [
   { plain: "Hi, I'm ", highlight: "Kaniga." },
@@ -152,8 +153,7 @@ export default function HeroSection() {
         <div className="hero-right">
           <div className="blob-wrap">
             <div className="circle-frame">
-              <img src="/photo.jpg" alt="Profile" className="profile-img" />
-            </div>
+        <img src={profilePic} alt="Profile" className="profile-img" />            </div>
             <div className="pill">
               <span className="pill-dot" />
               Open to work
