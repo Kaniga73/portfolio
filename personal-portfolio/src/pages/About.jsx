@@ -60,8 +60,7 @@ export default function About() {
         </p>
 
         <p className="about-body">
-          What excites me most is crafting thoughtful interactions, experimenting with design patterns, and seeing a project come alive. I'm always looking to collaborate, contribute, and grow as a developer.
-        </p>
+What excites me most is crafting thoughtful interactions and seeing a project come alive. I'm always looking to collaborate, contribute, and grow — and I'm currently open to internship and freelance opportunities.        </p>
       </div>
 
     </section>
