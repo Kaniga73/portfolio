@@ -4,6 +4,7 @@ import Education from './pages/Education'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Certification from './pages/Certification'
 
 function App() {
   return(
@@ -13,6 +14,7 @@ function App() {
     <Education/>
     <Skills/>
     <Projects/>
+    <Certification/>
     <Contact/>
 
     </>

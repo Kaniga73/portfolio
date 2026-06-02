@@ -103,6 +103,8 @@ export default function HeroSection() {
           <li><Link to="education" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Education</Link></li>
           <li><Link to="skills" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-100} onClick={() => setMenuOpen(false)}>Skills</Link></li>
           <li><Link to="projects" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="Certifications" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Certification</Link></li>
+
           <li><Link to="contact" smooth={true} duration={700} spy={true} activeClass="active-link" offset={-80} onClick={() => setMenuOpen(false)}>Contact</Link></li>
         </ul>
       </nav>
